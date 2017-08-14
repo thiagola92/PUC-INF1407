@@ -5,7 +5,7 @@ Programação para a Web
 
 **G1**: 2 Trabalhos práticos  
 **G2**: 2 Trabalhos práticos  
-**M** = (G1+G2)/2?  
+**M**: (G1+G2)/2?  
 
 Trabalho prático é uma prova em sala de aula com consulta ao material
 
