@@ -78,14 +78,14 @@ Um exemplo mais complexo seria
 <b>I know Math</b>
 <% } %>
 ```
-Seguindo o exemplo anterior, tudo fora de `<%` e `%>` é transformado em `out.write("");` 
+Seguindo os exemplos anteriores, tudo fora de `<%` e `%>` é transformado em `out.write("");` 
 ```JSP
 <% if(2+2==4) { %>
 out.write("<b>I know Math</b>");
 <% } %>
 ``` 
 E tudo dentro de `<%` e `%>` se mantem como código Java para rodar.
-```JSP
+```Java
 if(2+2==4) {
 out.write("<b>I know Math</b>");
 }
