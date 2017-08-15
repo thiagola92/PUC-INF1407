@@ -20,6 +20,17 @@ Você pode rodar uma página especifica clicando com
 Botão direito na página > Run As > Run on Server  
 Se você fizer isso no projeto, irá rodar a página inicial (padrão é index.html)  
 
+Páginas **JSP** são criadas com o referêncial para página **HTML 4**  
+```HTML
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+```
+Você pode alterar para o modelo do **HTML5**  
+```HTML
+<!DOCTYPE html>
+```
+[por que a referência do **HTML5** é mais curta?](https://www.w3schools.com/tags/tag_doctype.asp)
+
+
 ---
 
 Páginas JSP são páginas rodadas por Java, mas que visualmente aparenta HTML.  
