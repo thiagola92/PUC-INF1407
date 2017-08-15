@@ -11,6 +11,7 @@
 
 **src**: Java  
 **WebContent**: HTML, Javascript e JSP  
+**WebContent/web.xml**: Uma lista de prioridade para ser página inicial do site  
 
 ---
 
@@ -18,7 +19,7 @@ Após qualquer alteração em páginas **HTML** ou **JSP**, você não precisa c
 
 Você pode rodar uma página especifica clicando com  
 Botão direito na página > Run As > Run on Server  
-Se você fizer isso no projeto, irá rodar a página inicial (padrão é index.html)  
+Se você não fizer isso no projeto, irá tentar rodar uma das páginas padrões  
 
 Páginas **JSP** são criadas com o referêncial para página **HTML 4**  
 ```HTML
