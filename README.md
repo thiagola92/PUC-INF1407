@@ -13,7 +13,7 @@ Trabalho prático é uma prova em sala de aula com consulta ao material
 
 ## G1
 
-Instalar  
+### Instalar  
 * [Instalar Java (JRE)](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)  
 * [Instalar servidor Web e container JSP](http://tomcat.apache.org/download-90.cgi)  
 * [Instalar Eclipse EE](http://www.eclipse.org/)  
