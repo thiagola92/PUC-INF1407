@@ -32,7 +32,29 @@ Selecione o **apache-tomcat-x.x.x.zip**
 JRE > jrex.x.x > Finish > Apply and Close  
 
 File > New > Other > Wizards:  
-Write **web**  
+Escreva **web**  
 Dynamic Web Project > Next > Project Name  
-Give your son a name  
+De um nome ao seu filho  
 Next > Next > **Genereate web.xml deployment descriptor**  
+
+---
+
+### Criando página HTML
+Abra o projeto, vá até a pasta **WebContent**  
+Clique com o botão direito em **WebContent** > New... > Other >  
+Escreva HTML, selecione **HTML file**  
+Next > File Name  
+Apenas de um nome   
+Next > **New HTML File(5)** > Finish  
+
+### Criando página JSP
+Abra o projeto, vá até a pasta **WebContent**  
+Clique com o botão direito em **WebContent** > New... > Other >  
+Escreva JSP, selecione **JSP file**  
+Next > File Name  
+Apenas de um nome  
+Next > **New JSP File(html)** > Finish  
+
+### Rodando o site
+Botão direito no projeto > Run As > Run on server > **Tomcat vx.x Server**  > Finish  
+
