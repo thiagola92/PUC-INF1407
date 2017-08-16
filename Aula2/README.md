@@ -9,4 +9,5 @@ Tudo dentro do jsp para dentro do método de serviço.
 explicou <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 acessar usando http://localhost:8080/Exercicios-2017-2/
-    
+
+imaginar jsp como uma classe java 
