@@ -13,3 +13,5 @@ acessar usando http://localhost:8080/Exercicios-2017-2/
 imaginar jsp como uma classe java 
 
 problema de varias thread acessando a mesma variavel (variavel compartilhada)
+
+https://en.wikipedia.org/wiki/JavaServer_Pages
