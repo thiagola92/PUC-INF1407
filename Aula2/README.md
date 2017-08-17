@@ -124,7 +124,7 @@ class ClasseName {
 ```
 
 Notou algo de errado? Dentro de uma função você não pode declarar outra função.  
-Por isso que foi criada uma tag especial para declarar coisas no lado de fora da função.  
+Por isso que foi criada a tag `<%! %>` para declarar coisas no lado de fora da função.  
 ```JSP
 <%!
 int variavel_fora = 5;
@@ -135,7 +135,7 @@ int numeroX(int x) {
 %>
 ```
 
-Tudo declarando dentro dessa tag será adicionado no lado de fora da função.  
+Tudo declarando dentro de `<%!` e `%>` será adicionado no lado de fora da função.  
 Vamos supor que você tem o seguinte código.  
 ```JSP
 <%!
@@ -175,7 +175,7 @@ class ClasseName {
 ```
 
 ### `<%@ %>`
-@ google it
+google it
 
 Tudo dentro do jsp para dentro do método de serviço.
 (e como você não pode ter método dentro de método, você não pode criar método dentro da página jsp)
