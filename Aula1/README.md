@@ -35,7 +35,7 @@ Você pode alterar para o modelo do **HTML5**
 
 ---
 
-Páginas JSP são páginas rodadas por Java, mas que aparentam ser páginas HTML.  
+Imagine que páginas JSP são páginas rodadas por Java, mas que aparentam ser páginas HTML.  
 Tudo escrito fora de `<%` e `%>` é transformado em uma String que é mandada para o usuário normalmente.    
 ```JSP
 <html>
