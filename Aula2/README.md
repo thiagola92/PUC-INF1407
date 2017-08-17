@@ -41,8 +41,8 @@ class ClasseName {
 ## Tags
 Além da tag básica da ultima aula, que permite acessar Java, veremos outras que ajudam/facilitam mais ainda durante a programação de Java na página JSP.  
 
-<%= %>  
-Transforma o conteúdo dentro em uma string, apenas se possível.  
+### `<%= %>`  
+Transforma o conteúdo dentro em uma String, apenas se possível.  
 Vamos supor que você queira mostrar na tela o resultado de algum calculo feito em Java.  
 Existe muitas maneiras de fazer.  
 
@@ -62,7 +62,26 @@ Ambas as maneiras são um tanto quanto chatas de escrever, então JSP tem uma ma
 A soma de 2+2 é igual a <%= 2+2 %>
 ```
 
-!
+O que acontece é que o valor dentro do `<%=` e `%>` é convertido para String.  
+O que importa é que o valor que sobrar dentro dessas tags vai ser convertido para String, ou seja, você pode usar funções ou até operador ternario (pois ele retorna um valor no final, igual a funções).  
+```JSP
+A soma de 2+2 é igual a <%= 2 %> <br/>
+A soma de 2+2 é igual a <%= 2+2 %> <br/>
+A soma de 2+2 é igual a <%= 2==2 %> <br/>
+A soma de 2+2 é igual a <%= 2==3 %> <br/>
+A soma de 2+2 é igual a <%= 1==1 ? 0 : 10 %> <br/>
+A soma de 2+2 é igual a <%= Math.random() %> <br/>
+```
+
+**Se não for um valor então não tem como printar dessa maneira**
+```JSP
+A soma de 2+2 é igual a <%= int funcao(int n) { return 10 } %> <br/>
+```
+Isso vai dar erro pois você esta tentando converter para String uma declaração de função.
+
+### <%! %>
+
+
 @ google it
 
 Tudo dentro do jsp para dentro do método de serviço.
