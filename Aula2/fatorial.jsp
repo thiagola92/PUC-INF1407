@@ -2,11 +2,11 @@
     pageEncoding="ISO-8859-1"%>
 
 <%!
-	long fatorial(long n) {
-		if(n==0)
-			return 1;
-		return n * fatorial(n-1); 
-	}
+long fatorial(long n) {
+	if(n==0)
+		return 1;
+	return n * fatorial(n-1); 
+}
 %>
 
 <!DOCTYPE html>
@@ -18,12 +18,12 @@
 <body>
 
 <%
-	long numero, resultado;
+long numero, resultado;
 	
-	numero = 5;
-	resultado = fatorial(numero);
+numero = 5;
+resultado = fatorial(numero);
 	
-	out.print("o <i>fatorial</i> de <b>" + numero + "</b> é " + resultado);
+out.print("o <i>fatorial</i> de <b>" + numero + "</b> é " + resultado);
 %>
 <br/>
 o <i>fatorial</i> de <b> <% out.print(numero); %> </b> é <% out.print(resultado); %>
