@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>    
 <%!
-	int nVezes = 0;
+int nVezes = 0;
 %>
 
 <%
-	nVezes++;
+nVezes++;
 %>
 
 <!DOCTYPE html>
