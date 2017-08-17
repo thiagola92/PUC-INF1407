@@ -175,17 +175,25 @@ class ClasseName {
 ```
 
 ### `<%@ %>`
-google it
+Esse você já deve ter notado que existe quando cria um arquivo JSP, normalmente no inicio dele tem algo do tipo.  
+```JSP
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> 
+```
 
-Tudo dentro do jsp para dentro do método de serviço.
-(e como você não pode ter método dentro de método, você não pode criar método dentro da página jsp)
+Usando `<%@ %>` você pode acrescentar outros scripts (outras tags) para seu programa JSP.  
+Por padrão os scripts(tags) são `<%@` `<%!` `<%=`.  
+Mas você pode acrescentar outros com `<@%`.  
+```JSP
+<%@ page language="scripting-language" %>
+```
 
-explicou <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+Essa mesma tag pode ser usada para importar classes ou pacotes.  
+```JSP
+<%@ page import="fully-qualified-classname, packagename.*" %>
+```
 
-acessar usando http://localhost:8080/Exercicios-2017-2/
+---
 
-imaginar jsp como uma classe java 
+## Threads
 
 problema de varias thread acessando a mesma variavel (variavel compartilhada)
-
-https://en.wikipedia.org/wiki/JavaServer_Pages
