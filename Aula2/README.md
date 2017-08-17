@@ -41,7 +41,8 @@ class ClasseName {
 ## Tags
 Além da tag básica da ultima aula, que permite acessar Java, veremos outras que ajudam/facilitam mais ainda durante a programação de Java na página JSP.  
 
-**<%= %>**: Transforma o conteúdo dentro em uma string, apenas se possível.  
+<%= %>  
+Transforma o conteúdo dentro em uma string, apenas se possível.  
 Vamos supor que você queira mostrar na tela o resultado de algum calculo feito em Java.  
 Existe muitas maneiras de fazer.  
 
