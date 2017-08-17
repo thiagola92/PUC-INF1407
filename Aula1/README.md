@@ -11,7 +11,8 @@
 
 **src**: Java  
 **WebContent**: HTML, Javascript e JSP  
-**WebContent/web.xml**: Uma lista de prioridade para ser página inicial do site  
+**WebContent/web.xml**: Uma lista de prioridade para ser página inicial do site.  
+Essas páginas vão ser buscadas dentro da pasta **WebContent** (não mais fundo que isso)  
 
 ---
 
