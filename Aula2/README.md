@@ -197,7 +197,7 @@ Essa mesma tag pode ser usada para importar classes ou pacotes.
 ## Threads
 Como toda hora que você está acessando um JSP, é como se estivesse dentro de um método de uma classe.  
 As variáveis dos métodos são deletadas no final do método, **porém** as variáveis da classe se mantem após o método ser executado.  
-```
+```JSP
 <%!
 // variavel da classe
 int numero = 0;
