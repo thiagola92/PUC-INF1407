@@ -241,8 +241,14 @@ Agora o usuário **A** entra na página
 > variavel_da_classe = 4  
 > variavel_do_metodo = 0  
 
-Que problemas isso poderia trazer?
+Que problemas isso poderia trazer? Problema de concorrência, vamos supor que essa variável fosse um contador de visitas. Por enquanto contou que 4 pessoas acessaram a página, usuário A acesso três vezes e usuário B uma vez.  
+Se ambos acessarem a página ao mesmo tempo, ambos vão receber que a variavel_da_classe é 4 e vão aumentar para 5.  
+> variavel_da_classe = 5  
+> variavel_do_metodo = 0  
 
+E se um usuário C abrisse a página agora, ele veria  
+> variavel_da_classe = 6  
+> variavel_do_metodo = 0  
 
-
-problema de varias thread acessando a mesma variavel (variavel compartilhada)
+Usuário A acessou 4 vezes, usuário B acessou 2 vezes e usuário C acessou 1 vez. Totalizando em 7 acessos, mas o contador o valor da variavel_da_classe vai ser 6.  
+Esse tipo de problema tem que ser tratado adequadamente.
