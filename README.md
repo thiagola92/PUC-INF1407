@@ -57,4 +57,8 @@ Next > **New JSP File(html)** > Finish
 
 ### Rodando o site
 Botão direito no projeto > Run As > Run on server > **Tomcat vx.x Server**  > Finish  
+Vai abrir na página inicial
+
+Botão direito em uma das páginas > Run As > Run on server > **Tomcat vx.x Server**  > Finish  
+Vai abrir na página selecionada
 
