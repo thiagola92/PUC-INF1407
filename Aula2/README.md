@@ -199,24 +199,50 @@ Como toda hora que você está acessando um JSP, é como se estivesse dentro de 
 As variáveis dos métodos são deletadas no final do método, **porém** as variáveis da classe se mantem após o método ser executado.  
 ```JSP
 <%!
-// variavel da classe
-int numero = 0;
+int variavel_da_classe = 0;
 %>
 
 <%
 // variavel do metodo
-int outro_numero = 0;
+int variavel_do_metodo = 0;
 %>
 
-<%=numero%> <br/>
-<%=outro_numero%> <br/>
+variavel_da_classe = <%=variavel_da_classe%> <br/>
+variavel_do_metodo = <%=variavel_do_metodo%> <br/>
 
 <%
 // incrementando o valor dos numeros
-numero++;
-outro_numero++;
+variavel_da_classe++;
+variavel_do_metodo++;
 %>
 ```
+
+Vamos supor que temos o usuário **A** e o usuário **B**, acessando essa página JSP.  
+Quando usuário **A** acessar a página ele vai ver  
+> variavel_da_classe = 0  
+> variavel_do_metodo = 0  
+
+Como a variavel do método é apagada toda vez que chega no fim do método, toda vez que você roda a página você esta começando outra do inicio.  
+Então se o usuário **A** acessasse novamente a página JSP ele iria ver  
+> variavel_da_classe = 1  
+> variavel_do_metodo = 0  
+
+Como dito a variavel_do_metodo foi deletada e criada novamente, por isso está 0.  
+Como a da classe não é deletada o valor dela continua o de antes.  
+Se o usuário **A** acessasse novamente  
+> variavel_da_classe = 2  
+> variavel_do_metodo = 0  
+
+Agora é necessário entender que a classe dessa página é compartilhada entre todos que acessarem ela, ou seja, se o usuário **B** entrasse nela agora ele veria  
+> variavel_da_classe = 3  
+> variavel_do_metodo = 0  
+
+Agora o usuário **A** entra na página
+> variavel_da_classe = 4  
+> variavel_do_metodo = 0  
+
+Que problemas isso poderia trazer?
+
 
 
 problema de varias thread acessando a mesma variavel (variavel compartilhada)
