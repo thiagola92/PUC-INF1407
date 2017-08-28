@@ -14,6 +14,9 @@ public class Erro {
 	
 	public Erro() {
 		super();
+		this.numero = 1;
+		this.descricao = "Erro não detectado";
+		this.acao = "Volte ao formulário e tente novamente";
 	}
 
 	public int getNumero() {
