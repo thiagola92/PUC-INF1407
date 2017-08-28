@@ -62,3 +62,17 @@ Vai abrir na página inicial
 Botão direito em uma das páginas > Run As > Run on server > **Tomcat vx.x Server**  > Finish  
 Vai abrir na página selecionada
 
+---
+
+### Entregando Prova
+Clique com botão direito no projeto  
+Export > Export...  
+Escreva 'WAR' na busca  
+WAR file > Next > Export source files > Finish  
+**Observação**: Quando ele fez ele tinha o 'Overwrite existing file' marcado, mas não mencionou nada se tinha que marcar isso, por padrão não está marcado.  
+
+Como você não pode mandar por e-mail formatos .war, clique no nome do arquivo e altere de xxx.war para xxx.zip.  
+
+**Observação**: Caso você não consiga ver a extensão dos arquivos no windows, faça o seguinte  
+Windows explorer > (se o menu superior não estiver aparecendo) Alt > Ferramentas > Opções de Pasta > Modo de exibição >   
+Dentro de configurações avançadas desmarque 'Ocultar as extensões dos tipos de arquivo conhecidos'  
