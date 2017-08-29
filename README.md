@@ -31,13 +31,13 @@ Eclipse EE > Window > Preferences > Server > Runtime Environments > Add... > **A
 Selecione o **apache-tomcat-x.x.x.zip**  
 JRE > jrex.x.x > Finish > Apply and Close  
 
+### Criando projeto
+
 File > New > Other > Wizards:  
-Escreva **web**  
+Escreva "web"  
 Dynamic Web Project > Next > Project Name  
 De um nome ao seu filho  
 Next > Next > **Genereate web.xml deployment descriptor**  
-
----
 
 ### Criando página HTML
 Abra o projeto, vá até a pasta **WebContent**  
