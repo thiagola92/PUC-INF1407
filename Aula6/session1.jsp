@@ -65,7 +65,7 @@ synchronized(this) {
 out.print("F = " + f + "<br/>");
 */
 
-// attribute application
+// attribute application (synchronizing applicaiton)
 synchronized(application) {
 	try {
 		f = (int)application.getAttribute("f");
@@ -77,7 +77,7 @@ synchronized(application) {
 }
 out.print("F = " + f + "<br/>");
 
-//attribute application
+// attribute application (synchronizing object)
 
 try {
 	synchronized(application.getAttribute("g")) {
