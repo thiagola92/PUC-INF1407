@@ -17,6 +17,7 @@ if(texto != null && texto.length() > 0) {
 	if(lista == null)
 		lista = new ArrayList<Info>();
 	lista.add(info);
+	application.setAttribute("lista", lista);
 }
 %>
 
