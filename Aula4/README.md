@@ -27,4 +27,45 @@ pagina3
 <%
 String texto = request.getParameter("exemplo");
 %>
+Texto: <%= texto %>
 ```
+
+---
+
+Nessa aula vimos um exemplo de utilidade disso, podemos decidir para onde um formulário leva as informações dependendo do tipo de informaçãoo.  
+Vamos supor que temos 4 páginas: pagina1.jsp, pagina2.jsp, pagina3.jsp e pagina4.jsp  
+Se o usuário botar no campo de texto "pagina4" queremos que ele seja levado para página 4
+O atributo `action` sozinho não te ajuda a decidir o que fazer com a informação, então a idéia foi utilizar uma página para decidir.  
+
+pagina1
+```JSP
+<form action="pagina2.jsp" method="post">
+  <input type="text" name="exemplo">
+  <input type="submit">
+</form>
+```
+
+pagina2
+```JSP
+<%
+if("pagina4".equals(request.getParameter("exemplo")))
+  request.getRequestDispatcher("pagina4.jsp").forward(request, response);
+else
+  request.getRequestDispatcher("pagina3.jsp").forward(request, response);
+%>
+```
+
+pagina3
+```
+<%
+String texto = request.getParameter("exemplo");
+%>
+Texto: <%= texto %>
+```
+
+pagina4
+```
+<h1>Pagina 4</h1>
+```
+
+Agora temos um intermediario para tomar decisões.
