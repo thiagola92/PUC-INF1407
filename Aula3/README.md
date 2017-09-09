@@ -113,4 +113,49 @@ Lado positivo de usar get: Toda informação **não** é visível para quem tive
 Lado negativo de usar get: Você **não** pode salvar no favorito para acessa-la a qualquer momento da mesma maneira, ou seja, não é suficiente apenas ter o link para a página para reproduzir o que você fez da ultima vez.  
 
 ## Request e Response
-Você viu duas maneeiras do usuário mandar informações para o server (get e post). Mas ambas são lidas da mesma maneira pelo server, usando a variável request.  
+Você viu duas maneiras do usuário mandar informações para o server (get e post). Mas ambas são lidas da mesma maneira pelo server, usando a variável `request`. Agora em diante vou chamar request de objeto, pois é um objeto (tem métodos e variáveis dentro dele).  
+
+Um desses métodos é `getParameter(String name)` e ele é usado para pegar qualquer informação passada por get/post de um formulário.  
+```JSP
+<%
+String texto = request.getParameter("exemplo");
+%>
+```
+
+Não importa se é get ou post, pegar informação de formulário é a mesma maneira.  
+Se o campo não for preenchido ou não existir `request.getParameter()` retorna null. Sabendo disso você consegue saber se o usuário preencheu.  
+
+---
+
+Extra: Importante avisa-lo sobre **checkbox** em formulários.  
+
+Diferente da caixa de texto e outros que se você não botar nada dentro vai enviar `exemplo=` e nada depois, checkbox apenas enviam se for marcada. Por exemplo:  
+```JSP
+<form action="recebeFormulario.jsp" method="post">
+  <input type="text" name="exemplo">
+	<input type="checkbox" name="exemploCheckbox"/>
+  <input type="submit">
+</form>
+```
+
+Se você clicar para enviar sem escrever nada no campo de texto e nem clicar na checkbox, você vai ser mandado para `recebeFormulario.jsp?exemplo=`.  
+Agora se você escrever algo apenas no campo de texto, por exemplo "thiago" vai ser mandado para `recebeFormulario.jsp?exemplo=thiago`.  
+Note como a checkbox não aparece de maneira nenhuma se você não clicar! Agora se você clicar nela ela vai aparecer como `recebeFormulario.jsp?exemploCheckbox=on` ou se você escreveu "thiago" `recebeFormulario.jsp?exemplo=thiago&exemploCheckbox=on`.  
+Não vale a pena pegar o valor de exemploCheckbox, ou seja, você não precisa fazer   
+```JSP
+<%
+String resposta = request.getParameter("exemploCheckbox");
+if(resposta.equals("on")) {
+  // code
+}
+%>
+```
+
+Você consegue saber se está marcado simplesmente conferindo se retorna null, ou seja,   
+```JSP
+<%
+if(request.getParameter("exemploCheckbox") != null) {
+  // code
+}
+%>
+```
