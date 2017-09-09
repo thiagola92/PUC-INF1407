@@ -115,7 +115,9 @@ Lado negativo de usar get: Você **não** pode salvar no favorito para acessa-la
 ## Request e Response
 Você viu duas maneiras do usuário mandar informações para o server (get e post). Mas ambas são lidas da mesma maneira pelo server, usando a variável `request`. Agora em diante vou chamar request de objeto, pois é um objeto (tem métodos e variáveis dentro dele).  
 
-Um desses métodos é `getParameter(String name)` e ele é usado para pegar qualquer informação passada por get/post de um formulário.  
+Um desses métodos é  
+`getParameter(String name)`  
+e ele é usado para pegar qualquer informação passada por get/post de um formulário.  
 ```JSP
 <%
 String texto = request.getParameter("exemplo");
@@ -140,10 +142,11 @@ Diferente da caixa de texto e outros que se você não botar nada dentro vai env
 
 Se você clicar para enviar sem escrever nada no campo de texto e nem clicar na checkbox, você vai ser mandado para  
 `recebeFormulario.jsp?exemplo=`.  
-Agora se você escrever algo apenas no campo de texto, por exemplo "thiago" vai ser mandado para `recebeFormulario.jsp?exemplo=thiago`.  
+Agora se você escrever algo apenas no campo de texto, por exemplo "thiago" vai ser mandado para  
+`recebeFormulario.jsp?exemplo=thiago`.  
 Note como a checkbox não aparece de maneira nenhuma se você não clicar! Agora se você clicar nela ela vai aparecer como  
 `recebeFormulario.jsp?exemploCheckbox=on`  
-ou se você escreveu "thiago"
+ou se você escreveu "thiago"  
 `recebeFormulario.jsp?exemplo=thiago&exemploCheckbox=on`.   
 
 Não vale a pena pegar o valor de exemploCheckbox, ou seja, você não precisa fazer   
