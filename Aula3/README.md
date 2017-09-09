@@ -59,7 +59,9 @@ Um formulário simples seria
 Isso criaria algo do tipo  
 ![Formulario simples](formulario.PNG)
 
-Ao pressionar o botão você enviaria um request para a página "./recebeFormulario.jsp" e as informações que tivermos para enviar para a página seriam enviadas.  
+Ao pressionar o botão você enviaria um request para a página  
+`./recebeFormulario.jsp`  
+e as informações que tivermos para enviar para a página seriam enviadas.  
 Mas como um formulário sabe o que é para enviar?  
 Ele envia tudo que tiver o atributo **name**.  
 
@@ -81,7 +83,8 @@ get passa tudo pelo url, vamos supor que seu código é
 ```
 
 Agora suponha que você escreveu na caixa "Thiago".  
-Ao clicar em enviar, vai direcionar você para o url "./recebeFormulario.jsp?**exemplo**=**Thiago**".  
+Ao clicar em enviar, vai direcionar você para o url  
+`./recebeFormulario.jsp?**exemplo**=**Thiago**`    
 Se seu formulário tiver mais que uma informação para enviar, essa informação vai ficar separada por um & no link.  
 ```JSP
 <form action="recebeFormulario.jsp" method="get">
@@ -93,7 +96,8 @@ Se seu formulário tiver mais que uma informação para enviar, essa informaçã
 ```
 
 Agora imagine que escreveu em cada uma das caixas "Thiago", "Leo" e "Matheus", nessa respectiva ordem.  
-Você vai mandar você para o url "./recebeFormulario.jsp?exemplo=Thiago&exemploDois=Leo&exemplo3=Matheus".  
+Você vai mandar você para o url  
+`./recebeFormulario.jsp?exemplo=Thiago&exemploDois=Leo&exemplo3=Matheus`  
 
 Lado positivo de usar get: Você só precisa salvar o link da página para acessar ela da mesma forma que tinha acessado, ou seja, você pode salvar no favorito para acessa-la a qualquer momento dessa mesma maneira.  
 Lado negativo de usar get: Toda informação é visível para quem tiver o link, ou seja, você não quer deixar informação como senha dentro de um formulário com get, pois qualquer um vendo o link conseguiria sua senha.  
@@ -107,13 +111,17 @@ post **não** passa nada por url. Totalmente o oposto de get.
 </form>
 ```
 
-Esse código vai manda-lo para a página "./recebeFormulario.jsp". Nada vai aparecer no url, não importa quantas informações você quer passar.  
+Esse código vai manda-lo para a página  
+`./recebeFormulario.jsp`  
+Nada vai aparecer no url, não importa quantas informações você quer passar.  
 
 Lado positivo de usar get: Toda informação **não** é visível para quem tiver o link, ou seja, você quer deixar informação como senha dentro de um formulário com post.  
 Lado negativo de usar get: Você **não** pode salvar no favorito para acessa-la a qualquer momento da mesma maneira, ou seja, não é suficiente apenas ter o link para a página para reproduzir o que você fez da ultima vez.  
 
 ## Request e Response
-Você viu duas maneiras do usuário mandar informações para o server (get e post). Mas ambas são lidas da mesma maneira pelo server, usando a variável `request`. Agora em diante vou chamar request de objeto, pois é um objeto (tem métodos e variáveis dentro dele).  
+Você viu duas maneiras do usuário mandar informações para o server (get e post). Mas ambas são lidas da mesma maneira pelo server, usando a variável  
+`request`  
+Agora em diante vou chamar request de objeto, pois é um objeto (tem métodos e variáveis dentro dele).  
 
 Um desses métodos é  
 `getParameter(String name)`  
@@ -125,13 +133,17 @@ String texto = request.getParameter("exemplo");
 ```
 
 Não importa se é get ou post, pegar informação de formulário é a mesma maneira.  
-Se o campo não for preenchido ou não existir `request.getParameter()` retorna null. Sabendo disso você consegue saber se o usuário preencheu.  
+Se o campo não for preenchido ou não existir  
+`request.getParameter()`  
+retorna null. Sabendo disso você consegue saber se o usuário preencheu.  
 
 ---
 
 Extra: Importante avisa-lo sobre **checkbox** em formulários.  
 
-Diferente da caixa de texto e outros que se você não botar nada dentro vai enviar `exemplo=` e nada depois, checkbox apenas enviam se for marcada. Por exemplo:  
+Diferente da caixa de texto e outros que se você não botar nada dentro vai enviar  
+`exemplo=`  
+e nada depois, checkbox apenas enviam se for marcada. Por exemplo:  
 ```JSP
 <form action="recebeFormulario.jsp" method="post">
   <input type="text" name="exemplo">
