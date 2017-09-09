@@ -31,3 +31,21 @@ resposta == response
 E é atráves da variável **request** vamos acessar qualquer informação que o usuário tenha nos passado pelo pedido.  
 E é pelo **response** que vamos mandar informações para o usuário.  
 ![request e response](request.png)
+
+Antes de falar mais sobre request e response, vamos falar de **get** e **post**.  
+
+### Get e Post
+Se você já usou PHP/HTML grande chance de você já ter visto formulários.  
+Formulários ficam dentro da tag HTML `form`.  
+```JSP
+<form action="" method="">
+
+</form>
+```
+
+Tudo dentro da tag form vai ser mandado para o server caso tenha alguma informação para enviar.  
+Os dois atributos que eu deixei dentro do form são importantes pois  
+`action` diz a página para onde você vai ser redirecionado e para onde você vai enviar tudo no formulário.  
+`method` diz o como você vai enviar as informações, ou seja, **get** ou **post**.  
+
+**get** passa
