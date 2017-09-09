@@ -138,9 +138,14 @@ Diferente da caixa de texto e outros que se você não botar nada dentro vai env
 </form>
 ```
 
-Se você clicar para enviar sem escrever nada no campo de texto e nem clicar na checkbox, você vai ser mandado para `recebeFormulario.jsp?exemplo=`.  
+Se você clicar para enviar sem escrever nada no campo de texto e nem clicar na checkbox, você vai ser mandado para  
+`recebeFormulario.jsp?exemplo=`.  
 Agora se você escrever algo apenas no campo de texto, por exemplo "thiago" vai ser mandado para `recebeFormulario.jsp?exemplo=thiago`.  
-Note como a checkbox não aparece de maneira nenhuma se você não clicar! Agora se você clicar nela ela vai aparecer como `recebeFormulario.jsp?exemploCheckbox=on` ou se você escreveu "thiago" `recebeFormulario.jsp?exemplo=thiago&exemploCheckbox=on`.  
+Note como a checkbox não aparece de maneira nenhuma se você não clicar! Agora se você clicar nela ela vai aparecer como  
+`recebeFormulario.jsp?exemploCheckbox=on`  
+ou se você escreveu "thiago"
+`recebeFormulario.jsp?exemplo=thiago&exemploCheckbox=on`.   
+
 Não vale a pena pegar o valor de exemploCheckbox, ou seja, você não precisa fazer   
 ```JSP
 <%
