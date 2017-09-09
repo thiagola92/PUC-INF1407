@@ -48,4 +48,22 @@ Os dois atributos que eu deixei dentro do form são importantes pois
 `action` diz a página para onde você vai ser redirecionado e para onde você vai enviar tudo no formulário.  
 `method` diz o como você vai enviar as informações, ou seja, **get** ou **post**.  
 
-**get** passa
+Um formulário simples seria  
+```JSP
+<form action="recebeFormulario.jsp" method="get">
+  <input type="text">
+  <input type="submit">
+</form>
+```
+
+Isso criaria algo do tipo  
+![Formulario simples](formulario.PNG)
+
+#### Get
+get passa tudo pelo url, ou seja,  
+```JSP
+<form action="recebeFormulario.jsp" method="get">
+  <input type="text">
+  <input type="submit">
+</form>
+```
