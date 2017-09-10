@@ -34,7 +34,7 @@ Da mesma maneira que request podia passar objetos de uma página para a outra, s
 `session.getAttribute("exemplo");`  
 Para pegar o objeto.  
 
-Da mesma maneira que request, você tem que saber o tipo do objeto que quer receber
+Da mesma maneira que request, você tem que saber o tipo do objeto que quer receber  
 `Integer variavel_da_session = (Integer)sesssion.getAttribute("exemplo");`  
 
 Da mesma maneira que request, se não existir objeto, retorna null  
