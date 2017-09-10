@@ -9,15 +9,25 @@ if(nome == null || nome.length() == 0) {
 	Erro erroNome = new Erro();
 	erroNome.setNumero(1234);
 	erroNome.setDescricao("Nome invalido - esta em branco");
-	erroNome.setAcao("Volta ao formulÃ¡rio e preencha o nome");
+	erroNome.setAcao("Volta ao formulário e preencha o nome");
 	request.setAttribute("erro", erroNome);
 	request.getRequestDispatcher("erro.jsp").forward(request, response);
 }
 if(email == null || email.length() == 0) {
-	
+	Erro erroNome = new Erro();
+	erroNome.setNumero(1235);
+	erroNome.setDescricao("Email invalido - esta em branco");
+	erroNome.setAcao("Volta ao formulário e preencha o email");
+	request.setAttribute("erro", erroNome);
+	request.getRequestDispatcher("erro.jsp").forward(request, response);
 }
 if(telefone == null || telefone.length() == 0) {
-	
+	Erro erroNome = new Erro();
+	erroNome.setNumero(1236);
+	erroNome.setDescricao("Telefone invalido - esta em branco");
+	erroNome.setAcao("Volta ao formulário e preencha o telefone");
+	request.setAttribute("erro", erroNome);
+	request.getRequestDispatcher("erro.jsp").forward(request, response);
 }
 %>
     
