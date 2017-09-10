@@ -1,5 +1,36 @@
 # Aula 3
 
+## Page directive
+É uma maneira de passar instruções ao container da página.  
+Por exemplo,
+
+Diz que a linguagem da página é java.
+```JSP
+<%@ page language="java" %>
+```
+
+Define o tipo de conteudo que a página contem
+```JSP
+<%@ page contentType="text/html">
+```
+
+Por padrão é html. Mas pode ser outros tipos como
+```JSP
+<%@ page contentType="text/xml">
+<%@ page contentType="text/plain">
+<%@ page contentType="image/gif">
+<%@ page contentType="image/jpeg">
+<%@ page contentType="application/msword">
+<%@ page contentType="application/vnd.ms-excel">
+```
+
+Com isso a página vai tentar abrir o aplicativo no computador do usuário, que é responsável pelo formato que você especificou.  
+
+Além disso também pode fazer com que a classe servlet extenda uma outra classe.
+```JSP
+<%@ page extends="pacote.pacote2.Classe" %>
+```
+
 ## Thread
 Para resolver o problema de thread acessar um mesmo campo por duas pessoas diferentes, nós temos que suar `synchronized`.  
 Se você quiser souber como isso funciona, leia em https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html  
