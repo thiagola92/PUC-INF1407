@@ -55,3 +55,6 @@ A maneira de usar é a mesma da session, ou seja,
 `application.getAttribute("exemplo");`  
 `Integer variavel_da_session = (Integer)application.getAttribute("exemplo");`  
 `application.setAttribute("variavel", variavel_da_session+1);`  
+
+Mas qual é o grande problema de application? Thread.  
+Muitas pessoas querendo acessar a mesma informação ao mesmo tempo e alterar ela. Para resolver isso da ultima vez usamos `synchronized()`, dessa vez não será diferente.  
