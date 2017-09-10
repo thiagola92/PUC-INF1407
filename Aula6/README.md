@@ -48,3 +48,10 @@ Para armazenar você faz como se estivesse gravando o objeto novamente
 `session.setAttribute("variavel", variavel_da_session+1);`
 
 O que é session exatamente? É um cookie armazenado no navegador, por isso ao fechar ele o **cookie** é destruido. Além disso o cookie tem a duração padrão de 20 minutos.
+
+## Application
+Application armazena no server, para que todos possam acessar.  
+A maneira de usar é a mesma da session, ou seja,  
+`application.getAttribute("exemplo");`  
+`Integer variavel_da_session = (Integer)application.getAttribute("exemplo");`  
+`application.setAttribute("variavel", variavel_da_session+1);`  
