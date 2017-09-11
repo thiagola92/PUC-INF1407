@@ -12,7 +12,7 @@ session.setAttribute("nick", request.getParameter("nick"));
 <title>Sala de Chat</title>
 </head>
 
-<!--  frameset é ultrapassado, é feio usar isso mas fodasse -->
+<!--  frameset Ã© ultrapassado, Ã© feio usar isso mas fodasse -->
 <frameset rows="*,50">
 	<frame src="conteudo.jsp">
 	<frame src="formulario.jsp">
