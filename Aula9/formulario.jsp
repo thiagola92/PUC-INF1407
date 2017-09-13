@@ -19,6 +19,18 @@
 <input type="text" name="operando2">
 <input type="submit" value="=">
 </form>
+	
+<form action="../Calcula2" method="get">
+<input type="text" name="operando1">
+<select name="operacao">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="/">/</option>
+	<option value="x">*</option>
+</select>
+<input type="text" name="operando2">
+<input type="submit" value="=">
+</form>
 
 </body>
 </html>
