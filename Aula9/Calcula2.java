@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Calcula2
  */
-@WebServlet("/Calcula2")
+@WebServlet("/Calcula3")
 public class Calcula2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,7 +33,7 @@ public class Calcula2 extends HttpServlet {
 		
 		// processar dados
 		double operando1 = Double.parseDouble(s0p1);
-		double operando2 = Double.parseDouble(s0p1);
+		double operando2 = Double.parseDouble(s0p2);
 		double resultado = 0;
 		
 		if(operacao.equals("+")) {
