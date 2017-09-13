@@ -46,6 +46,10 @@ public class Calcula extends HttpServlet {
 			resultado = operando1 / operando2;
 		} else if(operacao.equals("x")) {
 			resultado = operando1 * operando2;
+		} else {
+			// ERRO!!!
+			request.setAttribute("tipoErro", "operacao invalida");
+			request.getRequestDispatcher("../erros/erro.jsp").forward(request, response);
 		}
 		
 		// encaminhar resultados para o visual
