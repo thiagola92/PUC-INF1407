@@ -35,7 +35,7 @@ public class Calcula extends HttpServlet {
 		
 		// processar dados
 		double operando1 = Double.parseDouble(s0p1);
-		double operando2 = Double.parseDouble(s0p1);
+		double operando2 = Double.parseDouble(s0p2);
 		double resultado = 0;
 		
 		if(operacao.equals("+")) {
