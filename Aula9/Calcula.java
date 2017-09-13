@@ -50,6 +50,7 @@ public class Calcula extends HttpServlet {
 			// ERRO!!!
 			request.setAttribute("tipoErro", "operacao invalida");
 			request.getRequestDispatcher("../erros/erro.jsp").forward(request, response);
+			return;
 		}
 		
 		// encaminhar resultados para o visual
