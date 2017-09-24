@@ -62,6 +62,16 @@ Vai abrir na página inicial
 Botão direito em uma das páginas > Run As > Run on server > **Tomcat vx.x Server**  > Finish  
 Vai abrir na página selecionada
 
+### Criando servlet  
+Vá na pasta  
+Java Resources > src  
+Clique com botão direito  
+New > Other... >  
+Escreva servlet, selecione **Servlet**  
+Next > Escolha um pacote > Escolha um nome > Next > URL mappings  
+Aqui é onde você escolhe o endereço virtual (o endereço que o usuário/server tem que acessar para ir pra esse servlet)  
+Selecione os métodos que já deseja no servlet > Finish  
+
 ---
 
 ### Entregando Prova
