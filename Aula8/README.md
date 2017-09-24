@@ -67,7 +67,7 @@ if(lista_de_cookies != null) {
 Claro que seria sensato salvar o cookie em uma variável e fazer desse procedimento um método.  
 ```Java
 public Cookie getCookie(String name) {
-  Cookie cookie;
+  Cookie cookie = null;
   Cookie lista_de_cookies[] = request.getCookies();
   if(lista_de_cookies != null) {
     for(int i=0; i < lista_de_cookies.length; i++) {
@@ -77,5 +77,7 @@ public Cookie getCookie(String name) {
       }
     }
   }
+  
+  return cookie;
 }
 ```
