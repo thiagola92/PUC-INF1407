@@ -100,3 +100,55 @@ session `session.setAttribute("bean", bean)`
 application `applicaiton.setAttribute("bean", bean)`  
 request `request.setAttribute("bean", bean)`  
 page `Bean bean = new Bean()`  
+
+Detalhe, tudo dentro da tag `<jsp:useBean>` só vai ocorrer se o objeto tiver sido criado, caso já existisse antes não vai ocorrer.  
+```JSP
+<jsp:useBean id="bean" class="pacote.Bean" scope="session">
+O objeto Bean foi criado em session com sucesso
+</jsp:useBean>
+```
+
+Agora que estamos usando as tags JSP, como vamos acessar o objeto? Usaremos mais tags JSP.  
+```JSP
+<jsp:useBean id="bean" class="pacote.Bean" scope="session">
+O objeto Bean foi criado em session com sucesso
+</jsp:useBean>
+
+<jsp:getProperty name="bean" property="nome" />
+```
+
+Note que nunca vai ocorrer problema pois o `<jsp:useBean>` vai criar o objeto se ele não existir e se ele já existir o `<jsp:getProperty />` vai pegar sem problema.  
+
+Os parametros do `<jsp:getProperty />`  
+**name**: Nome do objeto dado por você.  
+**property**: Nome da propriedade, no nosso caso "nome".  
+
+Note que as tags JSP são MUITO rigorosas, ou seja, `<jsp:getProperty />` precisa daquela barra no final que diz que não tem um `</jsp:getProperty>` no futuro.  
+E `<jsp:useBean>` precisa da tag `</jsp:useBean>`.  
+
+Se quisermos alterar o valor usaremos `<jsp:setProperty />`.  
+```JSP
+<jsp:useBean id="bean" class="pacote.Bean" scope="session">
+O objeto Bean foi criado em session com sucesso
+</jsp:useBean>
+
+<jsp:setProperty name="bean" property="nome" value="matheus" />
+```
+Os parametros do `<jsp:setProperty />`  
+**name**: Nome do objeto dado por você.  
+**property**: Nome da propriedade, no nosso caso "nome".  
+**value**: Novo valor.  
+
+Observação: **property** pode receber `*`, isso vai dizer para botar em todas as propriedades do objeto.  
+
+---
+Note que   
+
+`<jsp:getProperty name="bean" property="nome" />`
+É equivalente a fazer  
+`<%= bean.getNome() %>`
+
+`<jsp:setProperty name="bean" property="nome" value="matheus" />`
+É equivalente a fazer  
+`<% bean.setNome("matheus")%>`
+
