@@ -71,3 +71,28 @@ public class Exemplo extends HttpServlet {
   }
 }
 ```
+
+## Obtendo objetos (session, cookies, application)
+Obtendo pageContext:  
+`PageContext pageContext = JspFactory.getDefaultFactory().getPageContext(this, request, response, null, true, 8192, true);`
+
+Objeto application:  
+`ServletContext Application = pageContext.getServletContext();`
+
+Objeto session:  
+`HttpSessioin session = request.getSession();`
+
+Objeto request:  
+Já é passado como parâmetro 
+
+Objeto response:  
+Já é passado como parâmetro
+
+Objeto dispatcher:  
+`request.getRequestDispatcher("").forward(request, response);`
+
+Objeto out:  
+`PrintWriter out = response.getWriter();`
+
+Objeto page:
+`page = this;`
