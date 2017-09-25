@@ -89,3 +89,14 @@ A tag `<jsp:useBean>` abrevia toda essa operação para
 <jsp:useBean id="bean" class="pacote.Bean" scope="session"></jsp:useBean>
 ```
 
+Falando dos parametros passados  
+**id**:  
+Nome da variável (nome que você ta dando para ela no código).  
+**class**:  
+Classe, tipo da variável. Importante dizer o local exato, ou seja, incluir pacote.  
+**scope**:  
+Aonde você está botando esse objeto, as opções são page, request, session e application.    
+session `session.setAttribute("bean", bean)`  
+application `applicaiton.setAttribute("bean", bean)`  
+request `request.setAttribute("bean", bean)`  
+page `Bean bean = new Bean()`  
