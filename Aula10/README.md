@@ -65,8 +65,8 @@ Imagine que temos um arquivo cheio de métodos para facilitar nosso trabalho, o 
 
 ```JSP
 <jsp:useBean> </jsp:useBean>
-<jsp:setProperty> </jsp:setProperty>
-<jsp:getProperty> </jsp:getProperty>
+<jsp:setProperty/>
+<jsp:getProperty/>
 ...
 ```
 
