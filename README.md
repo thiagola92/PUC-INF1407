@@ -72,7 +72,7 @@ Next > Escolha um pacote > Escolha um nome > Next > URL mappings
 Aqui é onde você escolhe o endereço virtual (o endereço que o usuário/server tem que acessar para ir pra esse servlet)  
 Selecione os métodos que já deseja no servlet > Finish  
 
-### Instalando biblioteca externa
+### Instalando biblioteca externa (método do professor)
 Baixe **jstl-api-1.2.jar** e **jstl-impl-1.2.jar** no site do professor  
 Clique com botão direito no projeto  
 Build Path > Configure Build Path > Aba "Libraries" > Add Library... > User Library > Next > User Libraries... > New... > De o nome de JSTL > Add External JARs... >  
@@ -88,6 +88,13 @@ Agora que está aberto você deve ter um aviso do tipo
 `Classpath entry org.eclipse.jdt.USER_LIBRARY/JSTL will not be exported or published. Runtime ClassNotFoundExceptions may result.`  
 Clique com o botão direito em cima desse aviso > Quick Fix > Finish  
 
+### Instalando biblioteca externa (método google)
+*A outra maneira não parecia estar funcionando pois na página JSP não funcionava, solucionar estava dando muito trabalho então fui seguir tutorial de como instalar JSTL.*  
+
+Baixe [JSTL](http://central.maven.org/maven2/javax/servlet/jstl/1.2/jstl-1.2.jar)  
+Bote na pasta **WebContent/WEB-INF/lib**  
+
+Caso queira a fonte (normalmente só precisa fazer o número 1 da instalação): https://stackoverflow.com/tags/jstl/info  
 
 ---
 
