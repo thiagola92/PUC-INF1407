@@ -127,3 +127,12 @@ if(lista_de_cookies != null) {
 ```
 Com Expression Language é  
 `${cookie.nomeDoCookie.value}` ou `${cookie["nomeDoCookie"].value}`
+
+---
+
+Dentro das chaves você pode usar opereadores aritméticos ou relacionais ou lógicos.  
+```JSP
+${3+4}
+${3 == 4}
+${true && false}
+```
