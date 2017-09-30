@@ -14,11 +14,15 @@ if(bean == null) {
 }
 %>
 ```
+
 ----
+
 ```JSP
 <jsp:useBean id="bean" class="pacote.Bean" scope="session"></jsp:useBean>
 ```
+
 ----
+
 Agora em Expression Language, não precisamos nem declarar isso. Podemos pular direto para já pegar a informação.  
 
 ## Pegando informações
@@ -36,7 +40,9 @@ if(bean == null) {
 
 <%= bean.getNome() %>
 ```
+
 ----
+
 Usando tags JSP  
 ```JSP
 <jsp:useBean id="bean" class="pacote.Bean" scope="session">
@@ -73,4 +79,51 @@ ${sessionScope.bean.nome}
 ${applicationScope.bean.nome}
 ```
 
+---
+
 Expression Language também utiliza o padrão JavaBeans para saber o que acessar, ou seja, `${bean.nome}` vai tentar procurar `bean.getNome();`.  
+
+---
+
+Outra coisa que ele fez questão de deixar claro foi acessar Array, List e Map.  
+Já que neles você não tem um nome de variável para que ele procure o get.  
+`aList.get(indice)`  
+Como pegaria informação do indice 1? Com Expression Language é feito como se fosse um array.  
+
+Array:
+* `nomeDoArray[indice]`
+* `${nomeDoArray[indice]}`
+
+List:
+* `nomeDaLista.get(indice)`
+* `${nomeDaLista[indice]}`
+
+Map:
+* `nomeDaLista.get(chave)`
+* `${nomeDoMap[chave]}`
+
+---
+
+Como você pega informações que vieram de formulário? Normalmente seria  
+`getParameter("nome")`  
+Com Expression Language é  
+`${param.nome}`  
+
+---
+
+Como você pega cookies? Esse sem dúvida ficou mais fácil. Normalmente seria  
+```JSP
+<%
+Cookie lista_de_cookies[] = request.getCookies();
+if(lista_de_cookies != null) {
+  for(int i=0; i < lista_de_cookies.length; i++) {
+    if(lista_de_cookies[i].getName().equals("exemplo")) {
+      // ENCONTROU O COOKIE QUE QUERIA
+      break;
+    }
+  }
+}
+%>
+```
+Com Expression Language é  
+`${cookie.nomeDoCookie.value}` ou `${cookie["nomeDoCookie"].value}`
