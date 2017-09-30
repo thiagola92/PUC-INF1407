@@ -89,7 +89,7 @@ Agora que está aberto você deve ter um aviso do tipo
 Clique com o botão direito em cima desse aviso > Quick Fix > Finish  
 
 ### Instalando biblioteca externa (método google)
-*A outra maneira não parecia estar funcionando pois na página JSP não funcionava, solucionar estava dando muito trabalho então fui seguir tutorial de como instalar JSTL.*  
+*A outra maneira não parecia estar funcionando pois o código na página JSP não funcionava, solucionar estava dando muito trabalho então fui seguir tutorial de como instalar JSTL.*  
 
 Baixe [JSTL](http://central.maven.org/maven2/javax/servlet/jstl/1.2/jstl-1.2.jar)  
 Bote na pasta **WebContent/WEB-INF/lib**  
