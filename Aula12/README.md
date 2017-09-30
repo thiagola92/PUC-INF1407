@@ -17,3 +17,8 @@ Você vai ter que importar esses URI quando quiser usar essas funcionalidade na 
 A idéia é tirar todo o código java e trocar por JSTL.  
 Usando JSTL Core conseguimos fazer o seguinte  
 ![JSTL Core](core.PNG)
+
+Para começar a usar JSTL Core precisamos dizer que queremos usar ela e com qual prefixo.  
+```JSP
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+```
