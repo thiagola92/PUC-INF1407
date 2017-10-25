@@ -1,0 +1,32 @@
+@CHARSET "ISO-8859-1";
+
+table {
+    border-spacing: 0px 0px;
+	background-image: url("images/genius.png");
+}
+
+td {
+	border-style: none;
+	width: 320px;
+	height: 300px;
+}
+
+#greenButton {
+	background-image: url("images/verde-aceso.png");
+	background-position: -5px -5px ;
+}
+
+#yellowButton {
+	background-image: url("images/amarelo-aceso.png");
+	background-position: -5px -5px ;
+}
+
+#redButton {
+	background-image: url("images/vermelho-aceso.png");
+	background-position: -5px 10px ;
+}
+
+#blueButton {
+	background-image: url("images/azul-aceso.png");
+	background-position: -10px 10px ;
+}
