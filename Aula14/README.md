@@ -83,6 +83,8 @@ function nomeDoMetodo() {
 Como não queremos deixar coisas relacionadas a javascript na página html, o professor quer que não use `onclick="nomeDoMetodo"` já que chama uma função do javascript. Ele quer que seja mais discreto.  
 
 Para isso vamos usar o evento onload que faz algo acontecer assim que a página termina de carregar. Vamos criar uma função inicia e chamar ela quando terminar de carregar.  
+
+codigo.js
 ```javascript
 onload = inicia;
 
@@ -90,3 +92,20 @@ function inicia() {
   // codigo
 }
 ```
+
+Agora como iremos fazer um certo elemento html ter um evento? Teremos que referênciar esse elemento de alguma maneira, usaremos o atributos id.  
+
+pagina.html
+```html
+<p id="asdf">Texto qualquer</p>
+```
+
+codigo.js
+```javascript
+onload = inicia;
+
+function inicia() {
+  var objeto = document.getElementById("asdf");
+}
+```
+
