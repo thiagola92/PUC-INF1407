@@ -106,6 +106,11 @@ onload = inicia;
 
 function inicia() {
   var objeto = document.getElementById("asdf");
+  objeto.addEventListener("click", doSomething);
+}
+
+function doSomething() {
+  // codigo
 }
 ```
 
