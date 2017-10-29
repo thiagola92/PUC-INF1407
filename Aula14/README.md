@@ -81,3 +81,12 @@ function nomeDoMetodo() {
 ```
 
 Como não queremos deixar coisas relacionadas a javascript na página html, o professor quer que não use `onclick="nomeDoMetodo"` já que chama uma função do javascript. Ele quer que seja mais discreto.  
+
+Para isso vamos usar o evento onload que faz algo acontecer assim que a página termina de carregar. Vamos criar uma função inicia e chamar ela quando terminar de carregar.  
+```javascript
+onload = inicia;
+
+function inicia() {
+  // codigo
+}
+```
