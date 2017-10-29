@@ -114,3 +114,32 @@ function doSomething() {
 }
 ```
 
+Dependendo de qual atributo você for usar, vai ter que usar outra função.  
+
+pagina.html
+```html
+<p id="asdf">Texto 1</p>
+<p class="qwer">Texto 2</p>
+<p name="zxcv">Texto 3</p>
+```
+
+codigo.js
+```javascript
+onload = inicia;
+
+function inicia() {
+  var objeto = document.getElementById("asdf");
+  objeto.addEventListener("click", doSomething);
+  
+  var objeto = document.getElementsByClass("asdf");
+  objeto.addEventListener("click", doSomething);
+  
+  var objeto = document.getElementsByName("asdf");
+  objeto.addEventListener("click", doSomething);
+}
+
+function doSomething() {
+  // codigo
+}
+```
+
