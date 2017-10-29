@@ -131,7 +131,7 @@ function inicia() {
   var objeto = document.getElementById("asdf");
   objeto.addEventListener("click", doSomething);
   
-  var objeto = document.getElementsByClass("asdf");
+  var objeto = document.getElementsByClassName("asdf");
   objeto.addEventListener("click", doSomething);
   
   var objeto = document.getElementsByName("asdf");
