@@ -178,3 +178,21 @@ for(i=0; i < objeto.length; i++) {
 ### name
 HTML5 parou de usar, pois você consegue fazer as mesmas coisas dele com id/class... então não use ao menos que falem "use name pq eu sou um bosta".  
 
+### addEventListener
+É uma função de todos os objetos html, equivale a adicionar um atributo do tipo `onclick`,`onmousedown`, `onmouseenter`... Os dois parametros dessa função são o **evento** e a **função** que vai ser chamada quando o evento ocorrer.  
+```javascript
+var objeto = document.getElementById("carro");
+objeto.addEventListener("mousedown", funcao);
+```
+
+Note que diferente do html que você escreve  
+```html
+<p onclick="funcao">asdf</p>
+```
+
+No javascript você não precisa do prefixo **on**  
+```javascript
+objeto.addEventListener("click", funcao);
+```
+
+## Atributos pelo javascript
