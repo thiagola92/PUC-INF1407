@@ -114,7 +114,7 @@ function doSomething() {
 }
 ```
 
-Dependendo de qual atributo você for usar, vai ter que usar outra função.  
+Dependendo de qual atributo você for usar, vai ter que usar outra função para pegar o objeto.  
 
 pagina.html
 ```html
@@ -132,14 +132,49 @@ function inicia() {
   objeto.addEventListener("click", doSomething);
   
   var objeto = document.getElementsByClassName("asdf");
-  objeto.addEventListener("click", doSomething);
+  objeto[0].addEventListener("click", doSomething);
   
   var objeto = document.getElementsByName("asdf");
-  objeto.addEventListener("click", doSomething);
+  objeto[0].addEventListener("click", doSomething);
 }
 
 function doSomething() {
   // codigo
 }
 ```
+
+Qual a diferença dos 3?  
+
+### id
+É abreviação para identity(identidade) e apenas um elemento pode ter a identidade desse atributo, ou seja, se tiver `id="thiago"` em uma tag, nenhuma outra pode ter. É usado para você referênciar aquela tag especifica.  
+```html
+<p id="carro">fusca</p>
+<p id="lugar">rio</p>
+<p id="nome">thiago</p>
+```
+Quando você quiser pegar essas informações você pega com  
+```javascript
+var objeto = document.getElementById("carro");
+var objeto = document.getElementById("lugar");
+var objeto = document.getElementById("nome");
+```
+
+### class
+Varios elementos pode ter a mesma classe, você deve usar isso para agrupar tags parecidas que você quer acessar ao mesmo tempo no futuro.  
+```html
+<p class="nome">Thiago</p>
+<p class="nome">Pedro</p>
+<p class="nome">Hardman</p>
+```
+Quando você quiser pegar essas informações você pega com  
+```javascript
+var objeto = document.getElementsByClassName("nome");
+for(i=0; i < objeto.length; i++) {
+  // agora você acessa elemento com objeto[i]
+  // basta ver o exemplo lá em cima de adicionando eventos
+}
+```
+
+### name
+HTML5 parou de usar, pois você consegue fazer as mesmas coisas dele com id/class... então não use ao menos que falem "use name pq eu sou um bosta".  
 
