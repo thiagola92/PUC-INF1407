@@ -314,3 +314,26 @@ function dizAlgo() {
 Depois 3 segundos(3000ms) vai rodar a função dizAlgo. Fim  
 
 Ambas funções tem uma função que cancela elas(faz o contador de tempo parar) `clearInterval` e `clearTimeout`.   
+
+## Expressão Regular
+Também conhecida como RegEx/RegExp.  
+
+É uma maneira de buscar strings em uma string. É uma maneira de buscar strings que tem um certo formato em uma string.  
+É uma maneira de poupar o trabalho de escrever um programa que busca exatamente o que você quer...  
+É fácilmente editável...
+...
+
+Você tem um número telefone que são 4 número, seguidos por um sinal de menos e outros 4 números.  
+9999-9999 é uma string com essa qualidade.  
+9999-999 é uma string sem essa qualidade pois não veio 4 números após o traço.  
+9999-9399 é uma string com essa qualidade.  
+...
+
+Eu não quero criar um programa que verifique para cada byte se é um número, se depois de 4 bytes, se é traço...
+Eu posso aproveitar o regex para isso e dizer para ele o que eu estou buscando facilmente:  
+^\d{4}-\d{4}$
+
+É confuso de ler mas depois que você domina isso, você consegue fazer buscas fácilmente em um texto grande.  
+
+### Usando regex
+Uma página com todos regex: [pagina](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
