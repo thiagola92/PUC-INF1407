@@ -408,4 +408,5 @@ botao2.setAttribute("value", "não");
 objeto.appendChild(botao2);
 ```
 
+Note que a ordem a qual você bota dentro da tag se mantém.  
 Para ver tudo que você pode fazer com os elementos vá na página: [https://www.w3schools.com/jsref/dom_obj_all.asp](https://www.w3schools.com/jsref/dom_obj_all.asp)
