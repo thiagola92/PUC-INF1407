@@ -337,3 +337,31 @@ Eu posso aproveitar o regex para isso e dizer para ele o que eu estou buscando f
 
 ### Usando regex
 Uma página com todos regex: [pagina](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+
+Para criar um objeto que armazena um padrão de caracteres você bota o padrão dentro de barras(/), é bem parecido com string, você tem que avisar que é uma string com dupla aspas(").  
+```javascript
+var string = "";
+var pattern = //;
+```
+
+Vamos supor que você queira armazenar um padrão que é "ter número".  
+```javascript
+var pattern = /\d/;
+```
+
+Vamos usar a função `test` do objeto regex para saber se um texto/string tem ou não o regex.  
+`test` retorna true se tiver e false se não tiver.  
+```javascript
+var pattern = /\d/;
+pattern.test("esse texto tem algum número?"); // false
+pattern.test("esse texto tem 1/2/3/4/5...?"); // true
+```
+
+A função `exec` do regex funciona de maneira parecida, mas retorna o padrão encontrado ou null se não tiver.  
+```javascript
+var pattern = /\d/g;
+pattern.exec("esse texto tem algum número?"); // null
+pattern.exec("esse texto tem 1/2/3/4/5...?"); // 1
+pattern.exec("esse texto tem 1/2/3/4/5...?"); // 2
+pattern.exec("esse texto tem 1/2/3/4/5...?"); // 3
+```
