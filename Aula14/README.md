@@ -365,3 +365,47 @@ pattern.exec("esse texto tem 1/2/3/4/5...?"); // 1
 pattern.exec("esse texto tem 1/2/3/4/5...?"); // 2
 pattern.exec("esse texto tem 1/2/3/4/5...?"); // 3
 ```
+
+## Adicionar a página
+Você talvez já tenha visto alguém(ou eu) adicionar coisas na página usando `innerHTML`, mas esse método não é o melhor pois é mais lento de executar.  
+```html
+<p id="texto">
+  Era uma vez alguma coisa, quer prosseguir?
+</p>
+```
+
+Se você só sabe innerHTML, provável que para acrescentar botões nesse texto, você tenha feito.  
+```javascript
+var objeto = document.getElementById("texto");
+objeto.innerHTML = objeto.innerHTML + "<button id="sim">sim</button> <button id="nao">não</button>";
+```
+
+Isso transformaria a página html em  
+```html
+<p id="texto">
+  Era uma vez alguma coisa, quer prosseguir? <button id="sim">sim</button> <button id="nao">não</button>
+</p>
+```
+
+Pois innerHTML adiciona dentro do objeto que está alterando. Mas vamos agora para o método certo, nele você cria coisa por coisa(tag, atributo, texto normal).  
+```javascript
+var objeto = document.getElementById("texto");
+
+//botao1
+var botao1 = document.createElement("button");
+botao1.setAttribute("id", "sim");
+botao1.setAttribute("value", "sim");
+objeto.appendChild(botao1);
+
+//espaço entre botões
+var espaco = document.createTextNode(" ");
+objeto.appendChild(espaco);
+
+//botao2
+var botao2 = document.createElement("button");
+botao2.setAttribute("id", "nao");
+botao2.setAttribute("value", "não");
+objeto.appendChild(botao2);
+```
+
+Para ver tudo que você pode fazer com os elementos vá na página: [https://www.w3schools.com/jsref/dom_obj_all.asp](https://www.w3schools.com/jsref/dom_obj_all.asp)
