@@ -70,7 +70,7 @@ console.log("mensagem que vai aparecer no navegador");
 
 ## Eventos
 Quando um determinado evento ocorre, ele chama uma função relacionado a esse evento.  
-Para ver a lista completa de eventos: [Eventos](https://www.w3schools.com/jsref/dom_obj_event.asp)  
+Para ver a lista completa de eventos: [https://www.w3schools.com/jsref/dom_obj_event.asp](https://www.w3schools.com/jsref/dom_obj_event.asp)  
 
 Sempre que quisermos que algo aconteça após um evento, relacionamos uma função a esse evento.  
 
@@ -336,7 +336,7 @@ Eu posso aproveitar o regex para isso e dizer para ele o que eu estou buscando f
 É confuso de ler mas depois que você domina isso, você consegue fazer buscas fácilmente em um texto grande.  
 
 ### Usando regex
-Uma página com todos regex: [pagina](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+Uma página com todos regex: [https://www.w3schools.com/jsref/jsref_obj_regexp.asp](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
 
 Para criar um objeto que armazena um padrão de caracteres você bota o padrão dentro de barras(/), é bem parecido com string, você tem que avisar que é uma string com dupla aspas(").  
 ```javascript
