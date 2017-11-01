@@ -184,6 +184,14 @@ for(i=0; i < objeto.length; i++) {
 ### name
 HTML5 parou de usar, pois você consegue fazer as mesmas coisas dele com id/class... então não use ao menos que falem "use name pq eu sou um bosta".  
 
+### 4? tag
+Pegar todos os objetos com a tag daquele nome.  
+```javascript
+var objetos = document.getElementsByTagName("br");
+```
+
+Parecido com o pegar class mas agora você pega todos que usam a mesma tag.  
+
 ### addEventListener
 É uma função de todos os objetos html, equivale a adicionar um atributo do tipo `onclick`,`onmousedown`, `onmouseenter`... Os dois parametros dessa função são o **evento** e a **função** que vai ser chamada quando o evento ocorrer.  
 ```javascript
