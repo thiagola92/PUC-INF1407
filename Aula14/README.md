@@ -267,7 +267,8 @@ console.log(objeto.style["background-color"]);  // vai printar "green"
 console.log(objeto.style["backgroundColor"]);  // vai printar "green"
 ```
 
-Ou seja, divirta-se  ```javascript
+Ou seja, divirta-se   
+```javascript
 var objeto = document.getElementById("texto1");
 console.log(objeto.style.backgroundColor);  // vai printar "green"
 console.log(objeto.style["background-color"]);  // vai printar "green"
