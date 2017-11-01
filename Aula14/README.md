@@ -277,3 +277,32 @@ console.log(objeto["style"]backgroundColor);  // vai printar "green"
 console.log(objeto["style"]["background-color"]);  // vai printar "green"
 console.log(objeto["style"]["backgroundColor"]);  // vai printar "green"
 ```
+
+## Time
+Existe maneiras de fazer uma função ser chamada depois de X segundos. As duas funções responsáveis por isso é `setInterval()` `setTimeout()`  
+**setInterval()**: Vai chamar a função A CADA X milisegundos.  
+**setTimeout()**: Vai chamar a função DEPOIS de X milisegundos.  
+
+A primeira vai ficar chamando sem parar, a outra chama uma vez.  
+
+```javascript
+setInterval(dizAlgo, 3000);
+
+function dizAlgo() {
+  console.log("algo");
+}
+```
+
+Depois de 3 segundos(3000ms) vai rodar a função dizAlgo, depois vai esperar 3 segundos novamente e rodar a função dizAlgo, depois vai esperar 3 segundos novamente e rodar a função dizAlgo.......    
+
+```javascript
+setTimeout(dizAlgo, 3000);
+
+function dizAlgo() {
+  console.log("algo");
+}
+```
+
+Depois 3 segundos(3000ms) vai rodar a função dizAlgo. Fim  
+
+Ambas funções tem uma função que cancela elas(faz o contador de tempo parar) `clearInterval` e `clearTimeout`.   
