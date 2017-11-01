@@ -62,6 +62,12 @@ alert(c);
 (o formato de código javascript é **.js**)  
 Agora no inicio da página html ele copia tudo no arquivo **codigo.js** para dentro da tag `<script>`.  
 
+Em javascript você pode mandar mensagens para o navegador, como se fossem printf. Para ver ela precisa estar em "developer tools" do navegador (F12 no chrome)   
+```javascript
+console.log("mensagem que vai aparecer no navegador");
+```
+
+
 ## Eventos
 Quando um determinado evento ocorre, ele chama uma função relacionado a esse evento.  
 Para ver a lista completa de eventos: [Eventos](https://www.w3schools.com/jsref/dom_obj_event.asp)  
@@ -195,4 +201,78 @@ No javascript você não precisa do prefixo **on**
 objeto.addEventListener("click", funcao);
 ```
 
-## Atributos pelo javascript
+## Atributos html pelo javascript
+Qualquer objeto que você obteu pelo getElementById ou getElementsByClassName retornam um objeto que representa aquela tag e tudo dentro. Você consegue pegar as informações da tags fácilmente pois são variáveis dentro dos objetos.  
+
+```html
+<p id="texto1" class="cu" onclick="asdf">qualquer texto</p>
+```
+
+Você pode acessar essas informações dentro da tag  
+```javascript
+var objeto = document.getElementById("texto1");
+
+console.log(objeto.id);  // vai printar "texto1"
+console.log(objeto.class);  // vai printar "cu"
+console.log(objeto.onclick);  // vai printar "function onclick(event) { }"
+```
+
+E pode ter objetos dentro de objetos, por exemplo, o atributo html `style` é um objeto com outras variáveis.  
+```html
+<p style="background-color: green">qualquer texto</p>
+```
+
+```javascript
+var objeto = document.getElementById("texto1");
+console.log(objeto.style);  // vai printar "[object CSSStyleDeclaration]"
+console.log(objeto.style.backgroundColor);  // vai printar "green"
+```
+
+Esse é um bom momento para falar de como javascript acessa seus valores do objeto. Você fazer  
+`objeto.valor`
+É igual a  
+`objeto["valor"]`
+
+As duas maneiras em javascript faz ele procurar pela variavel com aquele nome. Em outras palavras   
+```javascript
+var objeto = document.getElementById("texto1");
+console.log(objeto.style.backgroundColor);  // vai printar "green"
+console.log(objeto["style"].backgroundColor);  // vai printar "green"
+```
+
+Mas note que "<p style="**background-color**: green">qualquer texto</p>" tem um sinal de menos no meio do nome. Em programação sinal de menos é subtração e isso causaria mal entendido, ou seja, você não pode fazer  
+```javascript
+var objeto = document.getElementById("texto1");
+console.log(objeto.style.background-color);  // vai printar "green"
+```
+
+Mas como você já viu antes, nós acessamos esse valor com "backgroundColor", ou seja, todo nome que teria o sinal de menos vai poder ser acessado tirando o sinal de menos e tornando a proxima letra maiuscula.  
+```javascript
+var objeto = document.getElementById("texto1");
+console.log(objeto.style.backgroundColor);  // vai printar "green"
+```
+
+MAS VOCÊ AINDA PODE ACESSAR PELA A OUTRA MANEIRA, POIS NA OUTRA MANEIRA VOCÊ PASSA UMA STRING IDENTIFICANDO O ATRIBUTO E STRINGS PODEM TER -  
+```javascript
+var objeto = document.getElementById("texto1");
+console.log(objeto.style.backgroundColor);  // vai printar "green"
+console.log(objeto.style["background-color"]);  // vai printar "green"
+```
+
+E EU ESTOU GRITANDO POIS N AGUENTO MAIS ESSE DETALHE, PRA TERMINAR, VOCÊ PODE PASSAR COMO STRING O NOME SEM O SINAL -   
+```javascript
+var objeto = document.getElementById("texto1");
+console.log(objeto.style.backgroundColor);  // vai printar "green"
+console.log(objeto.style["background-color"]);  // vai printar "green"
+console.log(objeto.style["backgroundColor"]);  // vai printar "green"
+```
+
+Ou seja, divirta-se  ```javascript
+var objeto = document.getElementById("texto1");
+console.log(objeto.style.backgroundColor);  // vai printar "green"
+console.log(objeto.style["background-color"]);  // vai printar "green"
+console.log(objeto.style["backgroundColor"]);  // vai printar "green"
+console.log(objeto["style"]backgroundColor);  // vai printar "green"
+console.log(objeto["style"]["background-color"]);  // vai printar "green"
+console.log(objeto["style"]["backgroundColor"]);  // vai printar "green"
+```
