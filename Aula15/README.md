@@ -141,7 +141,7 @@ httpRequest.onreadystatechange = function() {
     if(httpRequest.status == 200) {
       var texto = httpRequest.responseText;
       
-      // faça algo com isso
+      console.log(texto);
     }
   }
 }
@@ -185,3 +185,55 @@ Agora
 
 Basta passar pelas tags div com getElementsByTag("div") e verificar se o getAttribute("data-num") igual ao que você quer alterar.  
 
+## Servlet
+Podemos usar ajax para pegar informação texto de um arquivo txt como já vimos antes, agora vamos usar ajax para pegar informações texto que o **servlet** vai escrever.  
+
+Vamos começar escrevendo nosso servlet, vamos chama-lo de ServletExemplo. Ele por enquanto não faz nada.  
+```Java
+@WebServlet("/ServletExemplo")
+public class ServletExemplo extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // Não faz nada
+  }
+}
+```
+
+Vamos escrever em javascript um pedido GET para o ServletExemplo.  
+```Javascript
+httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = function() {
+  if(httpRequest.readyState == 4) {
+    if(httpRequest.status == 200) {
+      var texto = httpRequest.responseText;
+      
+      console.log(texto);
+    }
+  }
+}
+
+httpRequest.open("GET", "ServletExemplo", true);
+httpRequest.send();
+```
+
+Pronto, agora você pode ver como a maneira de se comunicar com servlet é igual a como se comunicava com qualquer outro arquivo ou página (tirando que servlet não tem formato txt/html/jsp). Mas nesse nosso exemplo o servlet não fez NADA, ou seja, o javascript vai receber um texto vazio.  
+
+Se você lembra de JSP e servlet, você lembra que escrever out.println() é como se estivesse escrevendo uma página html. Não é bem o que queremos agora, precisamos alterar o tipo para txt.   
+
+Para isso vamos precisar pegar o objeto responsável por enviar e alterar o tipo do conteudo.  
+
+```Java
+@WebServlet("/ServletExemplo")
+public class ServletExemplo extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    PrintWriter out = response.getWriter();
+    response.setContentType("text/plain");
+    
+    out.println("ola, como posso ajuda-lo?");
+  }
+}
+```
