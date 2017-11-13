@@ -167,4 +167,7 @@ console.log(elemento.getAttribute("data-coco")); // aparece "3"
 console.log(elemento.getAttribute("data-idade")); // aparece "onze"
 ```
 
-Note que nesse caso tem que ser pego usando getAttribute.  
+Note que nesse caso tem que ser pego usando getAttribute (tem a opção de eu não saber como pegar sem ser assim mas não conte pra ninguém isso).  
+
+Por que estamos falando de Html data-* ? Pois com isso podemos diferenciar em qual tag queremos botar as informações pedidas pelo ajax.  
+
