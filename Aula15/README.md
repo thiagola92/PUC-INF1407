@@ -63,3 +63,71 @@ Se você está recebendo dados do server, ou seja, `responseText` tem algum peda
 Se você já recebeu tudo e está pronto, ou seja, `responseText` já tem toda a informação que o server queria te passar.  
 
 A função em `onreadystatechange` é chamada sempre que mudar de qualquer um desses estados para outro.  
+Então a primeira coisa que precisamos fazer é criar uma função que vai ser chamada no lugar do `onreadystatechange`.  
+
+```Javascript
+httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = function() {
+  // Essa função vai ser chamda sempre que ouver mudança no estados
+}
+
+httpRequest.open("GET", "nomeDoArquivo.txt", true);
+httpRequest.send();
+```
+
+Note que eu escrevi o código de forma que enviar seja a ultima coisa, pois seria um problema se o server começasse a responder a você ainda não tivesse a função para tratar a resposta.  
+
+Note que essa função é chamada em vários momentos, por exemplo, quando você chamou `open`. O que isso quer dizer? Não necessariamente aquele método vai ser chamado quando o cliente receber informação mas em varios estágios diferentes. O que iremos ver em seguida é como saber se já terminou de receber as informações.  
+
+## readyState & status
+O objeto XMLHttpRequest tem dois atributos que armazenam o estado do pedido.  
+Primeiro **readyState**, esse atributo armazena o estado do request, um número indo de 0 até 4.  
+| Número | O que ocorreu                       |
+| ------ | ----------------------------------- |
+| 0      | `XMLHttpRequest` foi criado         |
+| 1      | `open()` foi chamado                |
+| 2      | `send()` foi chamado                |
+| 3      | `responseText` está recebendo dados |
+| 4      | Finalizado                          |
+
+Se você quiser ver mais sobre isso: [XMLHttpRequest.readyState](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState)  
+
+Agora podemos verificar se toda essa transmissão terminou  
+
+```Javascript
+httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = function() {
+  if(httpRequest.readyState == 4) {
+    // Terminou de receber informação
+  }
+}
+
+httpRequest.open("GET", "nomeDoArquivo.txt", true);
+httpRequest.send();
+```
+
+Agora vamos falar de **status**, esse atributo armazena o status da transmissão, ou seja, se tudo ocorreu bem ou se teve problemas.  
+Se quiser ver todos os status: [mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) ou [w3schools](https://www.w3schools.com/tags/ref_httpmessages.asp)  
+
+O número que mais nos interessa é o 200, que quer dizer "OK", informação chegou com sucesso.   
+Alterando nosso código para que apenas faça coisa que tudo estiver acontecido sem problema.  
+
+```Javascript
+httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = function() {
+  if(httpRequest.readyState == 4) {
+    if(httpRequest.status == 200) {
+      // Tudo aconteceu como o esperado, podemos tratar agora a informação recebida
+    }
+  }
+}
+
+httpRequest.open("GET", "nomeDoArquivo.txt", true);
+httpRequest.send();
+```
+
+## responseText
+Agora que conseguimos enviar e saber que a resposta foi recebida, vamos pegar essa informação recebida no atributo **responseText** (também falaremos do **responseXML**).  
