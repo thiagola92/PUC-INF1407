@@ -149,3 +149,22 @@ httpRequest.onreadystatechange = function() {
 httpRequest.open("GET", "nomeDoArquivo.txt", true);
 httpRequest.send();
 ```
+
+## HTML data-*  
+Em html existe um atributo que foi criado justamente para você "criar" atributos. Todo atributo que começa com **data-** é um atributo especial que você pode dar o nome dele depois do hífen.  
+
+```Html
+<h1 data-tamanho="grande" id="a"></h1>
+<br data-coco="3" id="b"></br>
+<div data-idade="onze" id="c"></div>
+```
+
+O que isso nos traz de bom? Podemos armazenar informações nas tags.  
+```Javascript
+var elemento = document.getElementById("a");
+console.log(elemento.getAttribute("data-tamanho")); // aparece "grande"
+console.log(elemento.getAttribute("data-coco")); // aparece "3"
+console.log(elemento.getAttribute("data-idade")); // aparece "onze"
+```
+
+Note que nesse caso tem que ser pego usando getAttribute.  
