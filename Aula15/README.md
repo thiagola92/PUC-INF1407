@@ -24,6 +24,7 @@ try {
     // Se chegou aqui você deve estar usando algo ancestral 
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   } catch(exception) {
+    // Navegador não compatível
     xmlhttp = null;
   }
 }
