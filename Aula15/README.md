@@ -66,7 +66,7 @@ A função em `onreadystatechange` é chamada sempre que mudar de qualquer um de
 Então a primeira coisa que precisamos fazer é criar uma função que vai ser chamada no lugar do `onreadystatechange`.  
 
 ```Javascript
-httpRequest = new XMLHttpRequest();
+var httpRequest = new XMLHttpRequest();
 
 httpRequest.onreadystatechange = function() {
   // Essa função vai ser chamda sempre que ouver mudança no estados
@@ -96,7 +96,7 @@ Se você quiser ver mais sobre isso: [XMLHttpRequest.readyState](https://develop
 Agora podemos verificar se toda essa transmissão terminou  
 
 ```Javascript
-httpRequest = new XMLHttpRequest();
+var httpRequest = new XMLHttpRequest();
 
 httpRequest.onreadystatechange = function() {
   if(httpRequest.readyState == 4) {
@@ -115,7 +115,7 @@ O número que mais nos interessa é o 200, que quer dizer "OK", informação che
 Alterando nosso código para que apenas faça coisa que tudo estiver acontecido sem problema.  
 
 ```Javascript
-httpRequest = new XMLHttpRequest();
+var httpRequest = new XMLHttpRequest();
 
 httpRequest.onreadystatechange = function() {
   if(httpRequest.readyState == 4) {
@@ -134,7 +134,7 @@ Agora que conseguimos enviar e saber que a resposta foi recebida, vamos pegar es
 Como responseText devolve uma string, que é o texto recebido, basta você pegar essa string e usar como desejado.  
 
 ```Javascript
-httpRequest = new XMLHttpRequest();
+var httpRequest = new XMLHttpRequest();
 
 httpRequest.onreadystatechange = function() {
   if(httpRequest.readyState == 4) {
@@ -202,7 +202,7 @@ public class ServletExemplo extends HttpServlet {
 
 Vamos escrever em javascript um pedido GET para o ServletExemplo.  
 ```Javascript
-httpRequest = new XMLHttpRequest();
+var httpRequest = new XMLHttpRequest();
 
 httpRequest.onreadystatechange = function() {
   if(httpRequest.readyState == 4) {
