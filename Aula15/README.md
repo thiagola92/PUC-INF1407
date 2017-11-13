@@ -131,3 +131,21 @@ httpRequest.send();
 
 ## responseText
 Agora que conseguimos enviar e saber que a resposta foi recebida, vamos pegar essa informação recebida no atributo **responseText** (também falaremos do **responseXML**).  
+Como responseText devolve uma string, que é o texto recebido, basta você pegar essa string e usar como desejado.  
+
+```Javascript
+httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = function() {
+  if(httpRequest.readyState == 4) {
+    if(httpRequest.status == 200) {
+      var texto = httpRequest.responseText;
+      
+      // faça algo com isso
+    }
+  }
+}
+
+httpRequest.open("GET", "nomeDoArquivo.txt", true);
+httpRequest.send();
+```
