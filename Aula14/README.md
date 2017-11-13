@@ -221,11 +221,13 @@ Você pode acessar essas informações dentro da tag
 var objeto = document.getElementById("texto1");
 
 console.log(objeto.id);  // vai printar "texto1"
-console.log(objeto.class);  // vai printar "cu"
+console.log(objeto.className);  // vai printar "cu"
 console.log(objeto.onclick);  // vai printar "function onclick(event) { }"
 ```
 
-E pode ter objetos dentro de objetos, por exemplo, o atributo html `style` é um objeto com outras variáveis.  
+Note que embora o atributo html se chame "class", no elemento javascript é armazenado como className, então esse é um dos grandes perigos na hora de pegar informação dessa maneira. Continuando...   
+
+Pode ter objetos dentro de objetos, por exemplo, o atributo html `style` é um objeto com outras variáveis.  
 ```html
 <p style="background-color: green">qualquer texto</p>
 ```
@@ -285,6 +287,25 @@ console.log(objeto["style"]backgroundColor);  // vai printar "green"
 console.log(objeto["style"]["background-color"]);  // vai printar "green"
 console.log(objeto["style"]["backgroundColor"]);  // vai printar "green"
 ```
+
+---
+
+Agora qual a melhor maneira de pegar atributos das tags Html? Usando uma função... Sim, depois de falar tudo isso para você vou recomendar você usar uma função `getAttribute()`. Voltando para o primeiro exemplo  
+
+```html
+<p id="texto1" class="cu" onclick="asdf">qualquer texto</p>
+```
+
+Você pode acessar essas informações dentro da tag  
+```javascript
+var objeto = document.getElementById("texto1");
+
+console.log(objeto.getAttribute("id"));  // vai printar "texto1"
+console.log(objeto.getAttribute("class"));  // vai printar "cu"
+console.log(objeto.getAttribute("onclick"));  // vai printar "asdf"
+```
+
+Só note que nesse caso pegou exatamente o que está em onclick. Nessa função basta você saber como é escrito no código html e pronto, consegue pegar o que ta dentro do atributo.    
 
 ## Time
 Existe maneiras de fazer uma função ser chamada depois de X segundos. As duas funções responsáveis por isso é `setInterval()` `setTimeout()`  
