@@ -169,5 +169,19 @@ console.log(elemento.getAttribute("data-idade")); // aparece "onze"
 
 Note que nesse caso tem que ser pego usando getAttribute (tem a opção de eu não saber como pegar sem ser assim mas não conte pra ninguém isso).  
 
-Por que estamos falando de Html data-* ? Pois com isso podemos diferenciar em qual tag queremos botar as informações pedidas pelo ajax.  
+Por que estamos falando de Html data-* ? Com isso não precisamos ficar criando id únicas ou tendo que quebrar o nome da id em pedaços para pegar qual é a tag que queremos alterar.  
+
+Antes  
+```Html
+<div id="area1">Texto aleatorio</div>
+<div id="area2">Texto aleatorio 2</div>
+```
+
+Agora  
+```Html
+<div data-num="1">Texto aleatorio</div>
+<div data-num="2">Texto aleatorio 2</div>
+```
+
+Basta passar pelas tags div com getElementsByTag("div") e verificar se o getAttribute("data-num") igual ao que você quer alterar.  
 
