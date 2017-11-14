@@ -225,13 +225,49 @@ Se você lembra de JSP e servlet, você lembra que escrever para escrever algo p
 ```Java
 @WebServlet("/ServletExemplo")
 public class ServletExemplo extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     PrintWriter out = response.getWriter();
-    //response.setContentType("text/plain");
+    response.setContentType("text/plain"); // Não é super necessária essa linha, eu acho
     
     out.println("ola, como posso ajuda-lo?");
   }
 }
 ```
+
+Lembra como se passava informação por formulário GET? Bastava botar a informação no link.  
+Vamos fazer o mesmo agora, vamos passar a informação e pega-la no servlet.  
+```Javascript
+var httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = function() {
+  if(httpRequest.readyState == 4) {
+    if(httpRequest.status == 200) {
+      var texto = httpRequest.responseText;
+      
+      console.log(texto);
+    }
+  }
+}
+
+httpRequest.open("GET", "ServletExemplo?informacao=13", true);
+httpRequest.send();
+```
+```Java
+@WebServlet("/ServletExemplo")
+public class ServletExemplo extends HttpServlet {
+  private static final long serialVersionUID = 1L;
+
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String info = request.getParameter("informacao");
+    
+    PrintWriter out = response.getWriter();
+    out.println("voce me enviou: " + info);
+  }
+}
+```
+
+Aquilo de Html data-* poderia ser usado para passar informação sobre o elemento agora... Mas não vou entrar em detalhe nisso.  
+
+### POST
