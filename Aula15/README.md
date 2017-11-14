@@ -220,9 +220,7 @@ httpRequest.send();
 
 Pronto, agora você pode ver como a maneira de se comunicar com servlet é igual a como se comunicava com qualquer outro arquivo ou página (tirando que servlet não tem formato txt/html/jsp). Mas nesse nosso exemplo o servlet não fez NADA, ou seja, o javascript vai receber um texto vazio.  
 
-Se você lembra de JSP e servlet, você lembra que escrever out.println() é como se estivesse escrevendo uma página html. Não é bem o que queremos agora, precisamos alterar o tipo para txt.   
-
-Para isso vamos precisar pegar o objeto responsável por enviar e alterar o tipo do conteudo.  
+Se você lembra de JSP e servlet, você lembra que escrever para escrever algo para o cliente você usava out.println() é como se estivesse escrevendo uma página html. Não é bem o que queremos agora, precisamos alterar o tipo para txt.   
 
 ```Java
 @WebServlet("/ServletExemplo")
