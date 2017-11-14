@@ -39,7 +39,7 @@ function pedeNoticiaPost(evento){
 	
 	var httpReq = createRequest();
 	var qs = "numero=" + numero;
-	httpReq.open("POST", "Noticia?", true);
+	httpReq.open("POST", "Noticia", true);
 	httpReq.setRequestHeader("Content-Type", "application/x-www-formurlencoded");
 	httpReq.onreadystatechange = function () {
 		if(httpReq.readyState == 4) {
