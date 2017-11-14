@@ -229,12 +229,14 @@ public class ServletExemplo extends HttpServlet {
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     PrintWriter out = response.getWriter();
-    response.setContentType("text/plain"); // Não é super necessária essa linha, eu acho
+    response.setContentType("text/plain");
     
     out.println("ola, como posso ajuda-lo?");
   }
 }
 ```
+
+A linha `response.setContentType("text/plain")` não é super necessária no nosso caso (acho que "text/plain" é o padrão), mas informa a quem ta recebendo o tipo de informação que vai receber.  
 
 Lembra como se passava informação por formulário GET? Bastava botar a informação no link.  
 Vamos fazer o mesmo agora, vamos passar a informação e pega-la no servlet.  
@@ -271,3 +273,67 @@ public class ServletExemplo extends HttpServlet {
 Aquilo de Html data-* poderia ser usado para passar informação sobre o elemento agora... Mas não vou entrar em detalhe nisso.  
 
 ### POST
+Se você quer mandar um request post, você vai ter fazer:  
+* Use `open()` só que POST.  
+* Use `send()` mas entre o parênteses bote uma string que passa as informações (da mesma maneira que você botaria atrás do link do GET).  
+* Altere o content-type para saberem que é POST.  
+
+```Javascript
+var httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = function() {
+  if(httpRequest.readyState == 4) {
+    if(httpRequest.status == 200) {
+      var texto = httpRequest.responseText;
+      
+      console.log(texto);
+    }
+  }
+}
+
+var passandoInformacao = "informacao=13";
+
+httpRequest.open("POST", "ServletExemplo", true);
+httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+httpRequest.send(passandoInformacao);
+```
+
+Note que é importante botar o `setRequestHeader` depois do `open`.  
+
+Como você passaria mais que uma informação? Eu avisei que seria igual ao link no GET, ou seja, use um & para separar a informação na string.  
+
+```Javascript
+var httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = function() {
+  if(httpRequest.readyState == 4) {
+    if(httpRequest.status == 200) {
+      var texto = httpRequest.responseText;
+      
+      console.log(texto);
+    }
+  }
+}
+
+var passandoInformacao = "informacao=13&nome=thiago";
+
+httpRequest.open("POST", "ServletExemplo", true);
+httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+httpRequest.send(passandoInformacao);
+```
+
+Por final você recebe no servlet usando um `doPost`.  
+```Java
+@WebServlet("/ServletExemplo")
+public class ServletExemplo extends HttpServlet {
+  private static final long serialVersionUID = 1L;
+
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String info = request.getParameter("informacao");
+    String nome = request.getParameter("nome");
+    
+    PrintWriter out = response.getWriter();
+    out.println("voce me enviou: " + info + ", nome: " + nome);
+  }
+}
+```
