@@ -83,6 +83,7 @@ Note que essa função é chamada em vários momentos, por exemplo, quando você
 ## readyState & status
 O objeto XMLHttpRequest tem dois atributos que armazenam o estado do pedido.  
 Primeiro **readyState**, esse atributo armazena o estado do request, um número indo de 0 até 4.  
+
 | Número | O que ocorreu                       |
 | ------ | ----------------------------------- |
 | 0      | `XMLHttpRequest` foi criado         |
