@@ -1,3 +1,5 @@
+![WARNING](WARNING.png)
+
 # PUC-INF1407
 Programação para a Web
 
